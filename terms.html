@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarpentryLeads.au – Terms & Conditions</title>
+    <meta name="description" content="Legal terms for our exclusive pre-qualified carpentry leads. 30‑day delivery, refund/credit policy, verification guarantees.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF3B00;
+            --primary-dark: #CC2F00;
+            --black: #0A0A0A;
+            --white: #FFFFFF;
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #E8E8E8;
+            --gray-300: #D1D1D1;
+            --gray-700: #3F3F3F;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --green: #00FF88;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            color: var(--black);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            gap: 40px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.03em;
+            transition: opacity 0.2s;
+        }
+
+        .logo:hover {
+            opacity: 0.7;
+        }
+
+        .logo .au {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            transition: all 0.3s;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 16px 0;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu .btn-primary {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        nav {
+            display: none;
+        }
+
+        nav a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 32px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid var(--gray-300);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--black);
+            transform: translateY(-1px);
+        }
+
+        .header-cta {
+            display: none;
+        }
+
+        /* terms specific */
+        .terms-section {
+            padding: 80px 0 100px;
+            background: var(--white);
+        }
+
+        .terms-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .terms-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--black);
+            color: var(--white);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .terms-badge::before {
+            content: '⚖';
+            color: var(--green);
+            font-size: 14px;
+        }
+
+        .terms-header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .terms-header h1 .highlight {
+            color: var(--primary);
+        }
+
+        .terms-header p {
+            font-size: 18px;
+            color: var(--gray-700);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .terms-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 24px;
+            padding: 48px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.02);
+        }
+
+        .terms-intro {
+            font-size: 18px;
+            background: var(--gray-50);
+            padding: 24px 32px;
+            border-radius: 16px;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--primary);
+            color: var(--gray-800);
+        }
+
+        .terms-clause {
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .terms-clause:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .terms-clause h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.01em;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terms-clause h2 .clause-marker {
+            color: var(--primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 18px;
+        }
+
+        .terms-clause p {
+            color: var(--gray-700);
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .terms-clause ul {
+            list-style: none;
+            margin: 16px 0;
+        }
+
+        .terms-clause li {
+            padding: 8px 0 8px 28px;
+            position: relative;
+            color: var(--gray-700);
+            border-bottom: 1px dashed var(--gray-200);
+        }
+
+        .terms-clause li:last-child {
+            border-bottom: none;
+        }
+
+        .terms-clause li::before {
+            content: '◆';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 12px;
+        }
+
+        .terms-highlight {
+            background: rgba(255, 59, 0, 0.05);
+            padding: 16px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 59, 0, 0.2);
+            margin: 24px 0 16px;
+            font-weight: 500;
+        }
+
+        .terms-highlight strong {
+            color: var(--primary);
+        }
+
+        .stat-block {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0 20px;
+        }
+
+        .stat-mini {
+            background: var(--gray-50);
+            border-radius: 40px;
+            padding: 8px 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid var(--gray-200);
+        }
+
+        .stat-mini span {
+            color: var(--primary);
+            margin-right: 6px;
+        }
+
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 2px solid var(--gray-200);
+            font-size: 14px;
+            color: var(--gray-700);
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Footer (exact copy from original) */
+        footer {
+            padding: 60px 0 40px;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand .au {
+            color: var(--primary);
+        }
+
+        .footer-tagline {
+            color: var(--gray-300);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--gray-300);
+        }
+
+        .footer-bottom a {
+            color: var(--gray-300);
+            text-decoration: underline;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary);
+        }
+
+        /* responsive */
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+            .terms-header h1 {
+                font-size: 56px;
+            }
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+        @media (min-width: 1024px) {
+            nav {
+                display: block;
+            }
+            .header-cta {
+                display: block;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <!-- Header (exact same as reference) -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    CarpentryLeads<span class="au">.au</span>
+                </a>
+                
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav>
+                    <a href="/#features">Features</a>
+                    <a href="/#how-it-works">How it works</a>
+                    <a href="/#pricing">Pricing</a>
+                    <a href="/#faq">FAQ</a>
+                </nav>
+                <a href="/order" class="btn-primary header-cta">Order Now</a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="/order">Order Now</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Terms page – exact style, content as requested -->
+    <section class="terms-section">
+        <div class="container">
+            <div class="terms-header">
+                <span class="terms-badge">// LEGAL</span>
+                <h1>Terms <span class="highlight">&</span> Conditions</h1>
+                <p>Our guarantees, scrub policy, and your peace of mind — in plain code.</p>
+            </div>
+
+            <div class="terms-card">
+                <div class="terms-intro">
+                    <strong>⚡ TL;DR:</strong> You're covered. All leads are delivered within 30 days, verified by PIN + real‑time email, match the type you selected, and are guaranteed by postcode. If something's off, you get a refund or rolling credits. We apply a 10% scrub cap on leads outside your criteria (at our discretion).
+                </div>
+
+                <!-- Clause 1 -->
+                <div class="terms-clause">
+                    <h2><span class="clause-marker">01.</span> Delivery guarantee (30 days max)</h2>
+                    <p>We commit to delivering all leads you purchase within <strong>30 calendar days</strong> from the date of order. Delivery occurs via email and/or your client dashboard. If we fail to deliver the full quantity within this period, you are entitled to either:</p>
+                    <ul>
+                        <li><strong>Full refund</strong> on the undelivered portion, or</li>
+                        <li><strong>Rolling credits</strong> applied to future months (no expiry).</li>
+                    </ul>
+                    <div class="terms-highlight">
+                        <strong>✓ 30‑day hard guarantee</strong> — no questions, no delays.
+                    </div>
+                </div>
+
+                <!-- Clause 2 -->
+                <div class="terms-clause">
+                    <h2><span class="clause-marker">02.</span> Refund & rolling credit policy</h2>
+                    <p>If leads are not delivered within 30 days, simply contact us. You choose: <strong>refund</strong> (to original payment method) or <strong>rolling credit</strong> (usable anytime for any lead type). Refunds are processed within 5 business days. Credits never expire and can be transferred between campaigns.</p>
+                    <p>For leads that are delivered but do not match the criteria outlined in clause 5, you may also request a refund/credit on a per‑lead basis – subject to our 10% scrub cap (clause 3).</p>
+                </div>
+
+                <!-- Clause 3 – 10% scrub cap -->
+                <div class="terms-clause">
+                    <h2><span class="clause-marker">03.</span> 10% scrub allowance (discretionary)</h2>
+                    <p>We stand by our targeting, but we also allow for a fair margin. <strong>You may request credit/refund for up to 10% of your monthly leads</strong> that fall <em>outside your selected criteria</em> (e.g. wrong postcode, wrong project type).</p>
+                    <ul>
+                        <li>Scrub requests must be made within 7 days of lead delivery.</li>
+                        <li>Approval is at <strong>QuoteLeads’ discretion</strong> after a quick manual check.</li>
+                        <li>If more than 10% of your order is problematic, we will either replace all of them or refund the whole batch – we don't mess around.</li>
+                    </ul>
+                    <div class="stat-mini"><span>🧹</span> max 10% scrub / order</div>
+                </div>
+
+                <!-- Clause 4 – geographic guarantee (postcode) -->
+                <div class="terms-clause">
+                    <h2><span class="clause-marker">04.</span> Area guarantee – postcode precise</h2>
+                    <p>All leads are guaranteed to be within the postcode(s) you select at purchase. We use IP geo‑validation and form confirmation to ensure the lead’s stated location matches their actual area. If a lead falls outside your target postcode(s) and you notify us within 7 days, it counts toward your scrub cap (or we replace it immediately).</p>
+                    <div class="stat-mini"><span>📍</span> verified by postcode</div>
+                </div>
+
+                <!-- Clause 5 – PIN + real‑time email verification -->
+                <div class="terms-clause">
+                    <h2><span class="clause-marker">05.</span> Verification (PIN & email)</h2>
+                    <p>Every lead we deliver undergoes <strong>real‑time double verification</strong>:</p>
+                    <ul>
+                        <li><strong>PIN verification</strong> – a unique code sent via SMS to the mobile number; must be entered correctly.</li>
+                        <li><strong>Real‑time email verification</strong> – we check that the email address exists, is formatted correctly, and can receive mail (no disposable/temporary domains).</li>
+                    </ul>
+                    <p>This guarantees that 100% of our leads are contactable. If you ever receive a lead with a dead phone line or hard‑bouncing email, it falls under the 10% scrub policy and we’ll replace or credit immediately.</p>
+                </div>
+
+                <!-- Clause 6 – lead type exact match -->
+                <div class="terms-clause">
+                    <h2><span class="clause-marker">06.</span> Lead type guarantee</h2>
+                    <p>When you purchase a specific lead type (e.g. “Decking & Pergolas”, “Fencing”, “Modular & Granny Flats”), we guarantee that the lead’s <strong>primary project matches that category</strong>. Our qualification funnel asks project‑specific questions and only tags the lead with the type you’ve selected if the homeowner confirms it.</p>
+                    <p>If a lead is mislabelled (e.g. you bought fencing but the lead is actually for a bathroom), it’s an automatic scrub – full credit or replacement, no questions, and <strong>does not count toward the 10% cap</strong>.</p>
+                </div>
+
+                <!-- Clause 7 – additional fine print (keep clean) -->
+                <div class="terms-clause">
+                    <h2><span class="clause-marker">07.</span> General provisions</h2>
+                    <p>These Terms are governed by the laws of New South Wales, Australia. CarpentryLeads.au is a product of QuoteLeads. We reserve the right to update these terms, but any changes will not affect existing orders. If any part of these terms is found to be unenforceable, the remainder remains in full force.</p>
+                    <p>Questions? <a href="/contact" style="color: var(--primary);">Contact us</a> – we reply within hours, not days.</p>
+                </div>
+
+                <div class="footer-note">
+                    ⚡ Version 2.0 · Effective 1 March 2026 · Your trust is our business model.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (exact copy from original) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">CarpentryLeads<span class="au">.au</span></div>
+                    <p class="footer-tagline">Exclusive, pre-qualified carpentry leads in Australia.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/terms">Terms</a>
+                    <a href="/privacy">Privacy</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/order">Order</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 QuoteLeads • CarpentryLeads.au is a product by <a href="https://quoteleads.com.au" target="_blank" rel="noopener">QuoteLeads</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Optional: close mobile menu when clicking a link
+        document.querySelectorAll('.mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobileMenu').classList.remove('active');
+            });
+        });
+
+        // Smooth scroll for footer/header links (if any)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
