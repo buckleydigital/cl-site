@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarpentryLeads.au - Exclusive Pre-Qualified Carpentry Leads</title>
+    <meta name="description" content="Quote-ready carpentry leads. Verified contact info. 100% exclusive. Delivered monthly or refunded.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF3B00;
+            --primary-dark: #CC2F00;
+            --black: #0A0A0A;
+            --white: #FFFFFF;
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #E8E8E8;
+            --gray-300: #D1D1D1;
+            --gray-700: #3F3F3F;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --green: #00FF88;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            color: var(--black);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            gap: 40px;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.03em;
+            transition: opacity 0.2s;
+        }
+
+        .logo:hover {
+            opacity: 0.7;
+        }
+
+        .logo .au {
+            color: var(--primary);
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            transition: all 0.3s;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 16px 0;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu .btn-primary {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        nav {
+            display: none;
+        }
+
+        nav a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 32px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid var(--gray-300);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--black);
+            transform: translateY(-1px);
+        }
+
+        .header-cta {
+            display: none;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--black);
+            color: var(--white);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+
+        .badge::before {
+            content: '●';
+            color: var(--green);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--gray-700);
+            margin-bottom: 32px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 48px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 32px;
+            background: var(--gray-50);
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: var(--gray-700);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--gray-700);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+
+        .feature-icon {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        /* Guarantee Section */
+        .guarantee {
+            padding: 60px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .guarantee h2 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .guarantee p {
+            font-size: 18px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Lead Example Section */
+        .lead-example {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .lead-card {
+            max-width: 700px;
+            margin: 0 auto;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+
+        .lead-header {
+            padding: 24px 32px;
+            background: var(--gray-50);
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .lead-header h3 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .lead-badge {
+            background: var(--primary);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .lead-details {
+            padding: 32px;
+        }
+
+        .lead-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .lead-row:last-child {
+            border-bottom: none;
+        }
+
+        .lead-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--gray-700);
+        }
+
+        .lead-value {
+            font-size: 14px;
+            font-weight: 500;
+            text-align: right;
+        }
+
+        .lead-value.verified {
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        .lead-footer {
+            padding: 24px 32px;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .lead-cta {
+            display: block;
+            padding: 14px 28px;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 14px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .lead-cta:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 80px 0;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            display: flex;
+            gap: 24px;
+            padding: 32px;
+            background: var(--gray-50);
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 20px;
+        }
+
+        .step-content h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .pricing .section-tag {
+            color: var(--primary);
+        }
+
+        .pricing .section-title {
+            color: var(--white);
+        }
+
+        .pricing .section-description {
+            color: var(--gray-300);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background: var(--gray-900);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--gray-800);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary);
+            transform: scaleX(1);
+            transition: transform 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .pricing-header {
+            margin-bottom: 24px;
+        }
+
+        .pricing-header h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .pricing-header p {
+            color: var(--gray-300);
+            font-size: 14px;
+        }
+
+        .pricing-price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+
+        .pricing-price span {
+            font-size: 20px;
+            color: var(--gray-300);
+        }
+
+        .pricing-note {
+            color: var(--gray-300);
+            font-size: 14px;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .pricing-features li {
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--gray-300);
+            border-bottom: 1px solid var(--gray-800);
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background: var(--white);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+        }
+
+        .testimonial-content {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 24px;
+            color: var(--gray-800);
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            color: var(--white);
+        }
+
+        .testimonial-info strong {
+            display: block;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .testimonial-info span {
+            font-size: 13px;
+            color: var(--gray-700);
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            border: 1px solid var(--gray-200);
+        }
+
+        .faq-question {
+            padding: 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+
+        .faq-question:hover {
+            background: var(--gray-50);
+        }
+
+        .faq-icon {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 20px;
+            color: var(--primary);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-content {
+            padding: 0 24px 24px;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        .cta .btn-primary {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .cta .btn-primary:hover {
+            background: var(--gray-100);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .footer-brand {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .footer-brand .au {
+            color: var(--primary);
+        }
+
+        .footer-tagline {
+            color: var(--gray-300);
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--gray-300);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--gray-300);
+        }
+
+        .footer-bottom a {
+            color: var(--gray-300);
+            text-decoration: underline;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 64px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guarantee h2 {
+                font-size: 36px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            nav {
+                display: block;
+            }
+
+            .header-cta {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 72px;
+            }
+
+            .feature-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .pricing-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+        }
+    </style>
+<base target="_blank">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    CarpentryLeads<span class="au">.au</span>
+                </a>
+                
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav>
+                    <a href="#features">Features</a>
+                    <a href="#how-it-works">How it works</a>
+                    <a href="#pricing">Pricing</a>
+                    <a href="#faq">FAQ</a>
+                </nav>
+                <a href="/order" class="btn-primary header-cta">Order Now</a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="/order">Order Now</a>
+                <a href="/contact">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <span class="badge">Exclusive • Pre-Qualified • Delivered Monthly</span>
+
+            <h1>Exclusive, Pre-Qualified<br><span class="highlight">Carpentry Leads</span></h1>
+            <p>Quote-ready homeowners. Real-time verified contact info. 100% exclusive to you. Delivered monthly or refunded. Guaranteed.</p>
+
+            <div class="hero-ctas">
+                <a href="/order" class="btn-primary">Get Started</a>
+                <a href="#how-it-works" class="btn-secondary">How it works</a>
+            </div>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Exclusive</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">PIN</div>
+                    <div class="stat-label">Verified</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">30d</div>
+                    <div class="stat-label">Guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <div class="container">
+            <h2>100% Contact Guarantee</h2>
+            <p>Order 10 leads, get 10 contactable, quote-ready leads. Guaranteed. Every lead is verified by our system before delivery.</p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">// WHY US</div>
+                <h2 class="section-title">Built Different</h2>
+                <p class="section-description">Every lead goes through real-time verification. No false numbers, no time wasted.</p>
+            </div>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">▶</div>
+                    <h3>First Leads in 24-48hrs</h3>
+                    <p>Start receiving quote-ready leads within 24-48 hours of signing up. No waiting around.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">◆</div>
+                    <h3>Click Buy. Done.</h3>
+                    <p>No forms to fill. No software to install. No tech headaches. Just click buy and we handle everything.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">✓</div>
+                    <h3>Quote-Ready</h3>
+                    <p>Custom qualification funnel ensures every lead has a real project, budget, and timeline.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">█</div>
+                    <h3>Real-Time PIN Verified</h3>
+                    <p>Real-time email + SMS verification with PIN code. Every contact is valid and reachable.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">◆</div>
+                    <h3>100% Exclusive</h3>
+                    <p>Sold to you only. Never shared, resold, or recycled. No more price shoppers and time wasters.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">↻</div>
+                    <h3>Monthly or Refund</h3>
+                    <p>Leads delivered within 30 days or full refund. No questions asked. You take zero risk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lead Example Section -->
+    <section class="lead-example">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">// EXAMPLE</div>
+                <h2 class="section-title">What You Get</h2>
+                <p class="section-description">Every lead includes complete contact details and project information.</p>
+            </div>
+
+            <div class="lead-card">
+                <div class="lead-header">
+                    <h3>Quote Requested</h3>
+                    <span class="lead-badge">NEW - EXCLUSIVE</span>
+                </div>
+                <div class="lead-details">
+                    <div class="lead-row">
+                        <span class="lead-label">Name</span>
+                        <span class="lead-value">Sarah Mitchell</span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-label">Email</span>
+                        <span class="lead-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e5d4f5c4f460043475a4d464b42426e4b434f4742004d4143004f5b">[email&#160;protected]</a></span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-label">Phone</span>
+                        <span class="lead-value">0412 345 678</span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-label">Postcode</span>
+                        <span class="lead-value">2000</span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-label">Project Type</span>
+                        <span class="lead-value">Decking & Pergola</span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-label">Timeline</span>
+                        <span class="lead-value">Within 2-3 months</span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-label">Source</span>
+                        <span class="lead-value">Google Ads</span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-label">Phone Verified</span>
+                        <span class="lead-value verified">✓ Verified</span>
+                    </div>
+                    <div class="lead-row">
+                        <span class="lead-label">Email Verified</span>
+                        <span class="lead-value verified">✓ Verified</span>
+                    </div>
+                </div>
+                <div class="lead-footer">
+                    <a href="/order" class="lead-cta">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="how-it-works" class="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">// PROCESS</div>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-description">From AI-powered ads to your inbox. Simple, fast, guaranteed.</p>
+            </div>
+
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>AI-Powered Targeting</h3>
+                        <p>Our AI ads target homeowners actively searching for carpentry services in your area with precision.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Custom Qualification</h3>
+                        <p>Each lead type has a custom funnel with project-specific questions to ensure they're quote-ready.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Real-Time Verification</h3>
+                        <p>We verify email and mobile with a PIN code in real-time. No false contacts ever reach you.</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Delivered to You</h3>
+                        <p>Leads delivered monthly via email and dashboard. Not delivered? Full refund, no questions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">// PRICING</div>
+                <h2 class="section-title">Transparent Pricing</h2>
+                <p class="section-description">Different prices for different project types. All leads 100% exclusive.</p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Fencing</h3>
+                        <p>High-volume project type</p>
+                    </div>
+                    <div class="pricing-price">$45<span>+GST</span></div>
+                    <p class="pricing-note">per lead • 5 leads minimum</p>
+                    <ul class="pricing-features">
+                        <li>100% exclusive leads</li>
+                        <li>Real-time PIN verified</li>
+                        <li>Quote-ready homeowners</li>
+                        <li>30-day delivery guarantee</li>
+                        <li>Full contact & project details</li>
+                    </ul>
+                    <a href="/order" class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Decking & Pergolas</h3>
+                        <p>Premium outdoor projects</p>
+                    </div>
+                    <div class="pricing-price">$55<span>+GST</span></div>
+                    <p class="pricing-note">per lead • 5 leads minimum</p>
+                    <ul class="pricing-features">
+                        <li>100% exclusive leads</li>
+                        <li>Real-time PIN verified</li>
+                        <li>Quote-ready homeowners</li>
+                        <li>30-day delivery guarantee</li>
+                        <li>Full contact & project details</li>
+                    </ul>
+                    <a href="/order" class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3>Modular & Granny Flats</h3>
+                        <p>High-value construction projects</p>
+                    </div>
+                    <div class="pricing-price">$85<span>+GST</span></div>
+                    <p class="pricing-note">per lead • 5 leads minimum</p>
+                    <ul class="pricing-features">
+                        <li>100% exclusive leads</li>
+                        <li>Real-time PIN verified</li>
+                        <li>Quote-ready homeowners</li>
+                        <li>30-day delivery guarantee</li>
+                        <li>Full contact & project details</li>
+                    </ul>
+                    <a href="/order" class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">// TESTIMONIALS</div>
+                <h2 class="section-title">What Contractors Say</h2>
+                <p class="section-description">Real results from real contractors.</p>
+            </div>
+
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <p class="testimonial-content">"We've closed 50% of the leads from CarpentryLeads in the last 3 months. The quality is unmatched — every person we call is expecting our quote and has a real project ready to go."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">GC</div>
+                        <div class="testimonial-info">
+                            <strong>Gold Coast Decking</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial">
+                    <p class="testimonial-content">"I've been getting some good local leads which are filling next year rather quickly and converting around 50%."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AB</div>
+                        <div class="testimonial-info">
+                            <strong>AB Built</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">// FAQ</div>
+                <h2 class="section-title">Frequently Asked</h2>
+                <p class="section-description">Everything you need to know.</p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What makes a lead "quote-ready"?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Every lead goes through a custom qualification funnel specific to their project type. They answer questions about budget, timeline, location, and project details before we verify their contact info. By the time you receive the lead, they're expecting your call and ready for a quote.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>How does the verification work?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            After completing the qualification funnel, we send a PIN code to both their email and mobile number in real-time. They must enter the correct PIN to submit their details. This ensures every contact is valid, reachable, and belongs to a real person — no bots, no fake numbers, no time wasted.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Are leads really exclusive?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Yes. 100%. Every lead is sold to one contractor only — you. We never share, resell, or recycle leads. When you buy a lead, it's yours exclusively. The homeowner will only receive your quote, giving you the best chance to win the job.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if I can't contact a lead?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            We guarantee 100% contact rates. Order 10 leads, get 10 contactable leads. Every number and email is verified by our system before delivery.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>What if leads aren't delivered?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            If we don't deliver your leads within the month, you get a full refund, no questions asked. This is our commitment to you: we either deliver what we promise, or we refund you completely. You take zero risk.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>Can I change my lead type or pause?</span>
+                        <span class="faq-icon">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            Absolutely. You can change your lead type, adjust your volume, or pause your subscription at any time. Just contact us and we'll make the change immediately. There are no lock-in contracts or cancellation fees.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Start Receiving Leads This Month</h2>
+            <p>Minimum 5 leads • Delivered monthly or refunded • 100% contact guarantee</p>
+            <a href="/order" class="btn-primary">Order Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">CarpentryLeads<span class="au">.au</span></div>
+                    <p class="footer-tagline">Exclusive, pre-qualified carpentry leads.<br>Delivered monthly or refunded.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="/terms">Terms</a>
+                    <a href="/privacy">Privacy</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/order">Order</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 QuoteLeads • CarpentryLeads.au is a product by <a href="https://quoteleads.com.au" target="_blank" rel="noopener">QuoteLeads</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                document.querySelectorAll('.faq-item').forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerOffset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
