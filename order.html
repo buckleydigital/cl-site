@@ -24,7 +24,7 @@
             --gray-100: #F5F5F5;
             --gray-200: #E8E8E8;
             --gray-300: #D1D1D1;
-            --gray-700: #3F3F7F;
+            --gray-700: #3F3F3F;
             --gray-800: #262626;
             --gray-900: #171717;
             --green: #00FF88;
@@ -36,6 +36,10 @@
             background: var(--white);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+        }
+
+        .mono {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
         }
 
         .container {
@@ -59,6 +63,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
+            gap: 40px;
         }
 
         .logo {
@@ -79,9 +84,122 @@
             color: var(--primary);
         }
 
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+            background: none;
+            border: none;
+        }
+
+        .mobile-menu-btn span {
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            transition: all 0.3s;
+        }
+
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 24px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .mobile-menu.active {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+            padding: 16px 0;
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .mobile-menu a:last-child {
+            border-bottom: none;
+        }
+
+        .mobile-menu .btn-primary {
+            display: block;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        nav {
+            display: none;
+        }
+
+        nav a {
+            color: var(--gray-700);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            margin-left: 32px;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        .btn-primary {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--primary);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            padding: 12px 24px;
+            background: var(--white);
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            border-radius: 8px;
+            border: 1px solid var(--gray-300);
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--black);
+            transform: translateY(-1px);
+        }
+
+        .header-cta {
+            display: none;
+        }
+
         /* Hero Section */
         .hero {
-            padding: 60px 0 40px;
+            padding: 80px 0 60px;
             text-align: center;
             background: var(--black);
             color: var(--white);
@@ -304,17 +422,22 @@
 
         /* Footer */
         footer {
-            padding: 40px 0;
+            padding: 60px 0 40px;
             background: var(--black);
             color: var(--white);
-            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
         }
 
         .footer-brand {
             font-family: 'JetBrains Mono', monospace;
             font-size: 16px;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .footer-brand .au {
@@ -324,19 +447,53 @@
         .footer-tagline {
             color: var(--gray-300);
             font-size: 14px;
+            margin-bottom: 24px;
         }
 
-        .footer-tagline a {
-            color: var(--primary);
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            color: var(--gray-300);
             text-decoration: none;
+            font-size: 14px;
+            transition: color 0.2s;
         }
 
-        .footer-tagline a:hover {
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-bottom {
+            padding-top: 32px;
+            border-top: 1px solid var(--gray-800);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+            font-size: 13px;
+            color: var(--gray-300);
+        }
+
+        .footer-bottom a {
+            color: var(--gray-300);
             text-decoration: underline;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary);
         }
 
         /* Responsive */
         @media (min-width: 768px) {
+            .mobile-menu-btn {
+                display: none;
+            }
+
             .hero h1 {
                 font-size: 56px;
             }
@@ -344,9 +501,22 @@
             .order-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
+
+            .footer-content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
 
         @media (min-width: 1024px) {
+            nav {
+                display: block;
+            }
+
+            .header-cta {
+                display: block;
+            }
+
             .hero h1 {
                 font-size: 64px;
             }
@@ -362,9 +532,29 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="/" class="logo">
+                <a href="index.html" class="logo">
                     CarpentryLeads<span class="au">.au</span>
                 </a>
+                
+                <button class="mobile-menu-btn" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <nav>
+                    <a href="index.html#features">Features</a>
+                    <a href="index.html#how-it-works">How it works</a>
+                    <a href="index.html#pricing">Pricing</a>
+                    <a href="index.html#faq">FAQ</a>
+                </nav>
+                <a href="order.html" class="btn-primary header-cta">Order Now</a>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <a href="order.html">Order Now</a>
+                <a href="contact.html">Contact</a>
             </div>
         </div>
     </header>
@@ -470,9 +660,30 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="footer-brand">CarpentryLeads<span class="au">.au</span></div>
-            <p class="footer-tagline">Questions? <a href="/contact">Contact us</a></p>
+            <div class="footer-content">
+                <div>
+                    <div class="footer-brand">CarpentryLeads<span class="au">.au</span></div>
+                    <p class="footer-tagline">Exclusive, pre-qualified carpentry leads in Australia.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="terms.html">Terms</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="order.html">Order</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© 2026 QuoteLeads • CarpentryLeads.au is a product by <a href="https://quoteleads.com.au" target="_blank" rel="noopener">QuoteLeads</a></span>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
