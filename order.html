@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Leads - CarpentryLeads.au</title>
+    <meta name="description" content="Order exclusive, pre-qualified carpentry leads. Verified contact info. 100% exclusive.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #FF3B00;
+            --primary-dark: #CC2F00;
+            --black: #0A0A0A;
+            --white: #FFFFFF;
+            --gray-50: #FAFAFA;
+            --gray-100: #F5F5F5;
+            --gray-200: #E8E8E8;
+            --gray-300: #D1D1D1;
+            --gray-700: #3F3F7F;
+            --gray-800: #262626;
+            --gray-900: #171717;
+            --green: #00FF88;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', 'Courier New', monospace;
+            color: var(--black);
+            background: var(--white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--gray-200);
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: var(--black);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: -0.03em;
+            transition: opacity 0.2s;
+        }
+
+        .logo:hover {
+            opacity: 0.7;
+        }
+
+        .logo .au {
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 60px 0 40px;
+            text-align: center;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--gray-300);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Order Section */
+        .order-section {
+            padding: 80px 0;
+            background: var(--gray-50);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-tag {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 13px;
+            color: var(--primary);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-description {
+            font-size: 18px;
+            color: var(--gray-700);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Order Cards Grid */
+        .order-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .order-card {
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+            transition: all 0.3s;
+        }
+
+        .order-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+        }
+
+        .order-header {
+            padding: 32px;
+            background: var(--gray-900);
+            color: var(--white);
+            border-bottom: 3px solid var(--primary);
+        }
+
+        .order-type {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .order-title {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .order-subtitle {
+            font-size: 14px;
+            color: var(--gray-300);
+        }
+
+        .order-body {
+            padding: 32px;
+        }
+
+        .price-row {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .price {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--black);
+        }
+
+        .price-note {
+            font-size: 14px;
+            color: var(--gray-700);
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 32px;
+        }
+
+        .features-list li {
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--gray-100);
+            font-size: 14px;
+        }
+
+        .features-list li:last-child {
+            border-bottom: none;
+        }
+
+        .features-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--green);
+            font-weight: 700;
+        }
+
+        /* PayPal Button */
+        .paypal-btn {
+            display: block;
+            width: 100%;
+            padding: 16px 24px;
+            background: #0070BA;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 8px;
+            transition: all 0.2s;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        .paypal-btn:hover {
+            background: #005ea6;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,112,186,0.3);
+        }
+
+        .paypal-btn::before {
+            content: '🛒 ';
+        }
+
+        .secure-note {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--gray-500);
+        }
+
+        .secure-note::before {
+            content: '🔒';
+        }
+
+        /* Guarantee Box */
+        .guarantee-box {
+            background: var(--primary);
+            color: var(--white);
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 48px;
+            text-align: center;
+        }
+
+        .guarantee-box h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .guarantee-box p {
+            font-size: 14px;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .footer-brand {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 16px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .footer-brand .au {
+            color: var(--primary);
+        }
+
+        .footer-tagline {
+            color: var(--gray-300);
+            font-size: 14px;
+        }
+
+        .footer-tagline a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer-tagline a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 56px;
+            }
+
+            .order-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 64px;
+            }
+
+            .order-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    CarpentryLeads<span class="au">.au</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Order Your Leads</h1>
+            <p>Select your lead type below. All orders include our 100% contact guarantee.</p>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section class="order-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">// SELECT LEAD TYPE</div>
+                <h2 class="section-title">Choose Your Package</h2>
+                <p class="section-description">Minimum 5 leads per order. All leads are exclusive, PIN-verified, and delivered within 30 days.</p>
+            </div>
+
+            <div class="order-grid">
+                <!-- Fencing Card -->
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-type">High Volume</div>
+                        <h3 class="order-title">Fencing</h3>
+                        <p class="order-subtitle">Residential & commercial fencing projects</p>
+                    </div>
+                    <div class="order-body">
+                        <div class="price-row">
+                            <span class="price">$45</span>
+                            <span class="price-note">+GST per lead<br>5 lead minimum ($225+GST)</span>
+                        </div>
+                        <ul class="features-list">
+                            <li>100% exclusive to you</li>
+                            <li>PIN-verified contact info</li>
+                            <li>Quote-ready homeowners</li>
+                            <li>30-day delivery guarantee</li>
+                            <li>Full project details included</li>
+                        </ul>
+                        <a href="https://www.paypal.com/ncp/payment/EYC9J2K49XSWS" class="paypal-btn">Pay with PayPal</a>
+                        <div class="secure-note">Secure checkout</div>
+                    </div>
+                </div>
+
+                <!-- Decking & Pergolas Card -->
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-type">Premium</div>
+                        <h3 class="order-title">Decking & Pergolas</h3>
+                        <p class="order-subtitle">Outdoor living & entertainment projects</p>
+                    </div>
+                    <div class="order-body">
+                        <div class="price-row">
+                            <span class="price">$55</span>
+                            <span class="price-note">+GST per lead<br>5 lead minimum ($275+GST)</span>
+                        </div>
+                        <ul class="features-list">
+                            <li>100% exclusive to you</li>
+                            <li>PIN-verified contact info</li>
+                            <li>Quote-ready homeowners</li>
+                            <li>30-day delivery guarantee</li>
+                            <li>Full project details included</li>
+                        </ul>
+                        <a href="https://www.paypal.com/ncp/payment/ZD6PKLUXVGUSY" class="paypal-btn">Pay with PayPal</a>
+                        <div class="secure-note">Secure checkout</div>
+                    </div>
+                </div>
+
+                <!-- Modular & Granny Flats Card -->
+                <div class="order-card">
+                    <div class="order-header">
+                        <div class="order-type">High Value</div>
+                        <h3 class="order-title">Modular & Granny Flats</h3>
+                        <p class="order-subtitle">Secondary dwelling construction projects</p>
+                    </div>
+                    <div class="order-body">
+                        <div class="price-row">
+                            <span class="price">$85</span>
+                            <span class="price-note">+GST per lead<br>5 lead minimum ($425+GST)</span>
+                        </div>
+                        <ul class="features-list">
+                            <li>100% exclusive to you</li>
+                            <li>PIN-verified contact info</li>
+                            <li>Quote-ready homeowners</li>
+                            <li>30-day delivery guarantee</li>
+                            <li>Full project details included</li>
+                        </ul>
+                        <a href="https://www.paypal.com/ncp/payment/T7V5HR795FNDJ" class="paypal-btn">Pay with PayPal</a>
+                        <div class="secure-note">Secure checkout</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guarantee-box">
+                <h3>100% Contact Guarantee</h3>
+                <p>Order 10 leads, get 10 contactable leads. Every lead verified.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-brand">CarpentryLeads<span class="au">.au</span></div>
+            <p class="footer-tagline">Questions? <a href="/contact">Contact us</a></p>
+        </div>
+    </footer>
+</body>
+</html>
