@@ -8,6 +8,16 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-BW07XK0WJZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BW07XK0WJZ');
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -18,6 +28,7 @@
         :root {
             --primary: #D4A574;
             --primary-dark: #B8905F;
+            --primary-light: #E8C9A8;
             --black: #1A1A1A;
             --white: #FFFFFF;
             --gray-50: #FAFAFA;
@@ -28,6 +39,7 @@
             --gray-800: #262626;
             --gray-900: #1A1A1A;
             --green: #00FF88;
+            --red: #FF6B6B;
         }
 
         body {
@@ -651,6 +663,313 @@
             font-weight: 700;
         }
 
+        /* ROI Calculator Styles */
+        .roi-calculator {
+            background: var(--gray-900);
+            border: 2px solid var(--primary);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .roi-calculator-header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .roi-calculator-header h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .roi-calculator-header p {
+            color: var(--gray-300);
+            font-size: 14px;
+        }
+
+        .roi-estimate-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            padding: 4px 8px;
+            background: var(--primary);
+            color: var(--black);
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: 4px;
+            vertical-align: middle;
+        }
+
+        .roi-inputs {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .roi-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .roi-input-group label {
+            color: var(--gray-300);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .roi-input-group input,
+        .roi-input-group select {
+            padding: 14px 16px;
+            background: var(--gray-800);
+            border: 2px solid var(--gray-700);
+            border-radius: 8px;
+            color: var(--white);
+            font-size: 16px;
+            font-family: inherit;
+            transition: all 0.2s;
+            width: 100%;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .roi-input-group input:focus,
+        .roi-input-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: var(--gray-900);
+        }
+
+        .roi-input-group input::placeholder {
+            color: var(--gray-300);
+        }
+
+        .roi-input-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23D4A574' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+            padding-right: 40px;
+        }
+
+        .roi-lead-selector {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .roi-lead-btn {
+            flex: 1;
+            min-width: 60px;
+            padding: 14px 12px;
+            background: var(--gray-800);
+            border: 2px solid var(--gray-700);
+            border-radius: 8px;
+            color: var(--white);
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 700;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            touch-action: manipulation;
+        }
+
+        .roi-lead-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+        }
+
+        .roi-lead-btn:hover:not(.active) {
+            border-color: var(--primary);
+        }
+
+        .roi-lead-btn:active {
+            transform: scale(0.98);
+        }
+
+        .roi-results {
+            background: var(--black);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            border: 1px solid var(--gray-800);
+        }
+
+        .roi-result-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .roi-result-item {
+            text-align: center;
+            padding: 16px;
+            background: var(--gray-900);
+            border-radius: 8px;
+            border: 1px solid var(--gray-800);
+        }
+
+        .roi-result-label {
+            font-size: 11px;
+            color: var(--gray-300);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
+            line-height: 1.3;
+        }
+
+        .roi-result-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .roi-result-value.positive {
+            color: var(--primary);
+        }
+
+        .roi-result-value.negative {
+            color: var(--red);
+        }
+
+        .roi-main-result {
+            text-align: center;
+            padding: 20px;
+            background: var(--gray-900);
+            border-radius: 8px;
+            border: 2px solid var(--primary);
+        }
+
+        .roi-main-result .roi-result-label {
+            font-size: 12px;
+            margin-bottom: 8px;
+            color: var(--gray-300);
+        }
+
+        .roi-main-result .roi-result-value {
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .roi-cta {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .roi-cta .btn-primary {
+            font-size: 16px;
+            padding: 16px 32px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .roi-disclaimer {
+            margin-top: 20px;
+            padding: 16px;
+            background: var(--gray-800);
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .roi-disclaimer-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 8px;
+            font-size: 12px;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .roi-disclaimer p {
+            font-size: 11px;
+            color: var(--gray-300);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .roi-disclaimer strong {
+            color: var(--white);
+        }
+
+        /* Tablet and up */
+        @media (min-width: 640px) {
+            .roi-calculator {
+                padding: 32px;
+            }
+
+            .roi-calculator-header h3 {
+                font-size: 24px;
+            }
+
+            .roi-inputs {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .roi-input-group.full-width {
+                grid-column: 1 / -1;
+            }
+
+            .roi-result-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 16px;
+            }
+
+            .roi-result-item {
+                padding: 12px;
+            }
+
+            .roi-result-value {
+                font-size: 20px;
+            }
+
+            .roi-main-result .roi-result-value {
+                font-size: 42px;
+            }
+
+            .roi-cta .btn-primary {
+                width: auto;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 768px) {
+            .roi-inputs {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .roi-input-group.lead-count {
+                grid-column: 1 / -1;
+            }
+
+            .roi-result-value {
+                font-size: 24px;
+            }
+        }
+
         /* Testimonials */
         .testimonials {
             padding: 80px 0;
@@ -1212,6 +1531,97 @@
                     <a href="/order" class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
                 </div>
             </div>
+
+            <!-- ROI Calculator -->
+            <div class="roi-calculator">
+                <div class="roi-calculator-header">
+                    <h3>
+                        💰 Lead ROI Calculator
+                        <span class="roi-estimate-badge">⚠️ Estimates Only</span>
+                    </h3>
+                    <p>See how much profit you could make from our leads</p>
+                </div>
+
+                <div class="roi-inputs">
+                    <div class="roi-input-group lead-count">
+                        <label>Number of Leads Per Month</label>
+                        <div class="roi-lead-selector">
+                            <button type="button" class="roi-lead-btn active" data-value="5" onclick="selectLeads(5)">5</button>
+                            <button type="button" class="roi-lead-btn" data-value="10" onclick="selectLeads(10)">10</button>
+                            <button type="button" class="roi-lead-btn" data-value="20" onclick="selectLeads(20)">20</button>
+                        </div>
+                    </div>
+
+                    <div class="roi-input-group">
+                        <label for="avgValue">Average Project Value ($)</label>
+                        <input type="number" id="avgValue" placeholder="e.g. 15000" value="15000" min="0" step="1000" oninput="calculateROI()">
+                    </div>
+
+                    <div class="roi-input-group">
+                        <label for="conversionRate">Your Conversion Rate (%)</label>
+                        <input type="number" id="conversionRate" placeholder="e.g. 30" value="30" min="0" max="100" step="5" oninput="calculateROI()">
+                    </div>
+
+                    <div class="roi-input-group">
+                        <label for="profitMargin">Your Profit Margin (%)</label>
+                        <input type="number" id="profitMargin" placeholder="e.g. 25" value="25" min="0" max="100" step="5" oninput="calculateROI()">
+                    </div>
+
+                    <div class="roi-input-group full-width">
+                        <label for="leadType">Lead Type</label>
+                        <select id="leadType" onchange="calculateROI()">
+                            <option value="45">Fencing ($45/lead)</option>
+                            <option value="60" selected>Decking & Pergolas ($60/lead)</option>
+                            <option value="80">Modular & Granny Flats ($80/lead)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="roi-results">
+                    <div class="roi-result-grid">
+                        <div class="roi-result-item">
+                            <div class="roi-result-label">Total Lead Cost</div>
+                            <div class="roi-result-value" id="totalCost">$300</div>
+                        </div>
+                        <div class="roi-result-item">
+                            <div class="roi-result-label">Est. Jobs Won</div>
+                            <div class="roi-result-value" id="jobsWon">1.5</div>
+                        </div>
+                        <div class="roi-result-item">
+                            <div class="roi-result-label">Total Revenue</div>
+                            <div class="roi-result-value" id="totalRevenue">$22,500</div>
+                        </div>
+                        <div class="roi-result-item">
+                            <div class="roi-result-label">Gross Profit</div>
+                            <div class="roi-result-value positive" id="grossProfit">$5,325</div>
+                        </div>
+                    </div>
+                    <div class="roi-main-result">
+                        <div class="roi-result-label">Net Profit After Lead Costs (Est.)</div>
+                        <div class="roi-result-value" id="netProfit">$5,025</div>
+                    </div>
+                </div>
+
+                <div class="roi-cta">
+                    <a href="/order" class="btn-primary">Start Earning - Order Now</a>
+                </div>
+
+                <div class="roi-disclaimer">
+                    <div class="roi-disclaimer-header">
+                        <span>⚠️</span>
+                        <span>Important Disclaimer</span>
+                    </div>
+                    <p>
+                        <strong>This calculator provides estimates and guides only for illustrative purposes.</strong> 
+                        Results are <strong>not guaranteed</strong>. Actual performance depends on market conditions, 
+                        competition, your pricing, work quality, seasonality, and other factors. Past performance 
+                        of other contractors does not guarantee future results. This is <strong>not financial advice</strong> 
+                        and does not form a legally binding contract. Individual results will vary. Please consult 
+                        a qualified accountant or business advisor before making financial decisions. 
+                        <em>Calculations exclude GST. Terms and conditions apply.</em>
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1390,7 +1800,63 @@
                     }
                 });
             });
+            
+            // Initialize ROI calculator
+            calculateROI();
         });
+
+        // ROI Calculator Functions
+        let selectedLeads = 5;
+
+        function selectLeads(num) {
+            selectedLeads = num;
+            
+            // Update UI
+            document.querySelectorAll('.roi-lead-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (parseInt(btn.dataset.value) === num) {
+                    btn.classList.add('active');
+                }
+            });
+            
+            calculateROI();
+        }
+
+        function calculateROI() {
+            const avgValue = parseFloat(document.getElementById('avgValue').value) || 0;
+            const conversionRate = parseFloat(document.getElementById('conversionRate').value) || 0;
+            const profitMargin = parseFloat(document.getElementById('profitMargin').value) || 0;
+            const costPerLead = parseFloat(document.getElementById('leadType').value) || 60;
+            
+            const totalCost = selectedLeads * costPerLead;
+            const jobsWon = selectedLeads * (conversionRate / 100);
+            const totalRevenue = jobsWon * avgValue;
+            const grossProfit = totalRevenue * (profitMargin / 100);
+            const netProfit = grossProfit - totalCost;
+            
+            // Update display
+            animateValue('totalCost', totalCost);
+            animateValue('jobsWon', jobsWon, 1);
+            animateValue('totalRevenue', totalRevenue);
+            animateValue('grossProfit', grossProfit);
+            animateValue('netProfit', netProfit);
+            
+            // Color code net profit
+            const netProfitEl = document.getElementById('netProfit');
+            netProfitEl.classList.remove('positive', 'negative');
+            if (netProfit > 0) {
+                netProfitEl.classList.add('positive');
+            } else if (netProfit < 0) {
+                netProfitEl.classList.add('negative');
+            }
+        }
+
+        function animateValue(id, value, decimals = 0) {
+            const el = document.getElementById(id);
+            const isJobs = id === 'jobsWon';
+            const displayValue = isJobs ? value.toFixed(decimals) : Math.round(value).toLocaleString();
+            el.textContent = isJobs ? displayValue : '$' + displayValue;
+        }
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
