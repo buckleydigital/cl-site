@@ -304,10 +304,71 @@
             font-weight: 600;
         }
 
+        /* Guarantee Section */
+        .guarantee {
+            padding: 60px 0;
+            background: var(--primary);
+            color: var(--white);
+            text-align: center;
+        }
+
+        .guarantee h2 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .guarantee p {
+            font-size: 18px;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Locations Section - NEW SIMPLE VERSION */
+        .locations {
+            padding: 60px 0;
+            background: var(--gray-50);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .locations-content {
+            text-align: center;
+        }
+
+        .locations-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .locations-list {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--gray-700);
+            line-height: 1.8;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .locations-list strong {
+            color: var(--black);
+            font-weight: 700;
+        }
+
         /* Features Section */
         .features {
             padding: 80px 0;
-            background: var(--gray-50);
+            background: var(--white);
         }
 
         .section-header {
@@ -347,7 +408,7 @@
         }
 
         .feature-card {
-            background: var(--white);
+            background: var(--gray-50);
             padding: 32px;
             border-radius: 16px;
             border: 1px solid var(--gray-200);
@@ -379,34 +440,10 @@
             line-height: 1.7;
         }
 
-        /* Guarantee Section */
-        .guarantee {
-            padding: 60px 0;
-            background: var(--primary);
-            color: var(--white);
-            text-align: center;
-        }
-
-        .guarantee h2 {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 28px;
-            font-weight: 800;
-            margin-bottom: 16px;
-            letter-spacing: -0.02em;
-        }
-
-        .guarantee p {
-            font-size: 18px;
-            opacity: 0.95;
-            max-width: 700px;
-            margin: 0 auto;
-            line-height: 1.6;
-        }
-
         /* Lead Example Section */
         .lead-example {
             padding: 80px 0;
-            background: var(--white);
+            background: var(--gray-50);
         }
 
         .lead-card {
@@ -1246,6 +1283,7 @@
         }
     </style>
 <base target="_blank">
+<base target="_blank">
 </head>
 <body>
     <!-- Header -->
@@ -1314,6 +1352,18 @@
         <div class="container">
             <h2>100% Contact Guarantee</h2>
             <p>Order 10 leads, get 10 contactable, quote-ready leads. Guaranteed. Every lead is verified by our system before delivery.</p>
+        </div>
+    </section>
+
+    <!-- Available Locations Section - SIMPLE VERSION -->
+    <section class="locations">
+        <div class="container">
+            <div class="locations-content">
+                <div class="locations-label">// AVAILABLE LOCATIONS</div>
+                <div class="locations-list">
+                    <strong>Sydney</strong> • <strong>Melbourne</strong> • <strong>Brisbane</strong> • <strong>Perth</strong> • <strong>Adelaide</strong> • <strong>Gold Coast</strong> • <strong>Newcastle</strong> • <strong>Canberra</strong> • <strong>Sunshine Coast</strong> • <strong>Geelong</strong> • <strong>Hobart</strong> • <strong>Townsville</strong> • <strong>Cairns</strong> • <strong>Darwin</strong>
+                </div>
+            </div>
         </div>
     </section>
 
