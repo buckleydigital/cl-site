@@ -328,7 +328,7 @@
             line-height: 1.6;
         }
 
-        /* Locations Section - NEW SIMPLE VERSION */
+        /* Locations Section */
         .locations {
             padding: 60px 0;
             background: var(--gray-50);
@@ -440,10 +440,71 @@
             line-height: 1.7;
         }
 
+        /* Objections Section */
+        .objections {
+            padding: 80px 0;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        .objections .section-tag {
+            color: var(--primary);
+        }
+
+        .objections .section-title {
+            color: var(--white);
+        }
+
+        .objections .section-description {
+            color: var(--gray-300);
+        }
+
+        .objection-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .objection-card {
+            background: var(--gray-900);
+            padding: 32px;
+            border-radius: 16px;
+            border: 1px solid var(--gray-800);
+            transition: all 0.3s;
+        }
+
+        .objection-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .objection-icon {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 28px;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .objection-card h3 {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+
+        .objection-card p {
+            color: var(--gray-300);
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
         /* Lead Example Section */
         .lead-example {
             padding: 80px 0;
-            background: var(--gray-50);
+            background: var(--white);
         }
 
         .lead-card {
@@ -540,6 +601,7 @@
         /* Process Section */
         .process {
             padding: 80px 0;
+            background: var(--gray-50);
         }
 
         .process-grid {
@@ -554,7 +616,7 @@
             display: flex;
             gap: 24px;
             padding: 32px;
-            background: var(--gray-50);
+            background: var(--white);
             border-radius: 16px;
             border: 1px solid var(--gray-200);
         }
@@ -589,20 +651,7 @@
         /* Pricing Section */
         .pricing {
             padding: 80px 0;
-            background: var(--black);
-            color: var(--white);
-        }
-
-        .pricing .section-tag {
-            color: var(--primary);
-        }
-
-        .pricing .section-title {
-            color: var(--white);
-        }
-
-        .pricing .section-description {
-            color: var(--gray-300);
+            background: var(--white);
         }
 
         .pricing-grid {
@@ -614,10 +663,10 @@
         }
 
         .pricing-card {
-            background: var(--gray-900);
+            background: var(--gray-50);
             padding: 40px;
             border-radius: 16px;
-            border: 1px solid var(--gray-800);
+            border: 1px solid var(--gray-200);
             transition: all 0.3s;
             position: relative;
             overflow: hidden;
@@ -638,6 +687,7 @@
         .pricing-card:hover {
             border-color: var(--primary);
             transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
         }
 
         .pricing-header {
@@ -649,10 +699,11 @@
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 8px;
+            color: var(--black);
         }
 
         .pricing-header p {
-            color: var(--gray-300);
+            color: var(--gray-700);
             font-size: 14px;
         }
 
@@ -660,17 +711,17 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 48px;
             font-weight: 800;
-            color: var(--white);
+            color: var(--black);
             margin-bottom: 8px;
         }
 
         .pricing-price span {
             font-size: 20px;
-            color: var(--gray-300);
+            color: var(--gray-700);
         }
 
         .pricing-note {
-            color: var(--gray-300);
+            color: var(--gray-700);
             font-size: 14px;
             margin-bottom: 32px;
         }
@@ -684,8 +735,8 @@
             padding: 12px 0;
             padding-left: 28px;
             position: relative;
-            color: var(--gray-300);
-            border-bottom: 1px solid var(--gray-800);
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--gray-200);
         }
 
         .pricing-features li:last-child {
@@ -698,6 +749,21 @@
             left: 0;
             color: var(--green);
             font-weight: 700;
+        }
+
+        .pricing-guarantee {
+            margin-top: 20px;
+            padding: 16px;
+            background: var(--gray-100);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary);
+        }
+
+        .pricing-guarantee p {
+            font-size: 13px;
+            color: var(--gray-700);
+            margin: 0;
+            font-weight: 500;
         }
 
         /* ROI Calculator Styles */
@@ -723,11 +789,6 @@
             font-weight: 800;
             color: var(--white);
             margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            flex-wrap: wrap;
         }
 
         .roi-calculator-header p {
@@ -1010,6 +1071,7 @@
         /* Testimonials */
         .testimonials {
             padding: 80px 0;
+            background: var(--white);
         }
 
         .testimonial-grid {
@@ -1242,6 +1304,10 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
+            .objection-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .pricing-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -1272,6 +1338,10 @@
                 grid-template-columns: repeat(3, 1fr);
             }
 
+            .objection-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
             .pricing-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
@@ -1282,8 +1352,6 @@
             }
         }
     </style>
-<base target="_blank">
-<base target="_blank">
 </head>
 <body>
     <!-- Header -->
@@ -1324,6 +1392,10 @@
 
             <h1>Exclusive, Pre-Qualified<br><span class="highlight">Carpentry Leads</span></h1>
             <p>Quote-ready homeowners. Real-time verified contact info. 100% exclusive to you. Delivered monthly or refunded. Guaranteed.</p>
+            
+            <p style="font-size: 16px; color: var(--gray-700); margin-top: 16px; font-weight: 500;">
+                <span style="color: var(--primary);">✓</span> Leads see your business name before they fill the form. They expect your call. No cold call awkwardness.
+            </p>
 
             <div class="hero-ctas">
                 <a href="/order" class="btn-primary">Get Started</a>
@@ -1355,7 +1427,7 @@
         </div>
     </section>
 
-    <!-- Available Locations Section - SIMPLE VERSION -->
+    <!-- Available Locations Section -->
     <section class="locations">
         <div class="container">
             <div class="locations-content">
@@ -1544,7 +1616,10 @@
                         <li>30-day delivery guarantee</li>
                         <li>Volume discounts available</li>
                     </ul>
-                    <a href="/order" class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                    <div class="pricing-guarantee">
+                        <p>30-day delivery guarantee. Receive all leads within 30 days or full refund. No questions asked.</p>
+                    </div>
+                    <a href="/order" class="btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Get Started</a>
                 </div>
 
                 <div class="pricing-card">
@@ -1561,7 +1636,10 @@
                         <li>30-day delivery guarantee</li>
                         <li>Volume discounts available</li>
                     </ul>
-                    <a href="/order" class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                    <div class="pricing-guarantee">
+                        <p>30-day delivery guarantee. Receive all leads within 30 days or full refund. No questions asked.</p>
+                    </div>
+                    <a href="/order" class="btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Get Started</a>
                 </div>
 
                 <div class="pricing-card">
@@ -1578,7 +1656,10 @@
                         <li>30-day delivery guarantee</li>
                         <li>Volume discounts available</li>
                     </ul>
-                    <a href="/order" class="btn-primary" style="width: 100%; text-align: center;">Get Started</a>
+                    <div class="pricing-guarantee">
+                        <p>30-day delivery guarantee. Receive all leads within 30 days or full refund. No questions asked.</p>
+                    </div>
+                    <a href="/order" class="btn-primary" style="width: 100%; text-align: center; margin-top: 20px;">Get Started</a>
                 </div>
             </div>
 
@@ -1586,8 +1667,8 @@
             <div class="roi-calculator">
                 <div class="roi-calculator-header">
                     <h3>
-                        💰 Lead ROI Calculator
-                        <span class="roi-estimate-badge">⚠️ Estimates Only</span>
+                        Lead ROI Calculator
+                        <span class="roi-estimate-badge">Estimates Only</span>
                     </h3>
                     <p>See how much profit you could make from our leads</p>
                 </div>
@@ -1658,7 +1739,7 @@
 
                 <div class="roi-disclaimer">
                     <div class="roi-disclaimer-header">
-                        <span>⚠️</span>
+                        <span>!</span>
                         <span>Important Disclaimer</span>
                     </div>
                     <p>
@@ -1670,6 +1751,43 @@
                         a qualified accountant or business advisor before making financial decisions. 
                         <em>Calculations exclude GST. Terms and conditions apply.</em>
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Objections Section - Now under Pricing -->
+    <section class="objections">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-tag">// YOUR WORRIES, HANDLED</div>
+                <h2 class="section-title">Common Concerns</h2>
+                <p class="section-description">We understand your hesitations. Here's how we address them.</p>
+            </div>
+
+            <div class="objection-grid">
+                <div class="objection-card">
+                    <div class="objection-icon">?</div>
+                    <h3>"What if I don't close any?"</h3>
+                    <p>If you have experience closing marketplace leads, you will perform significantly better with ours. Our exclusive, pre-qualified leads convert at substantially higher rates. If we fail to deliver your leads within 30 days, you receive a full refund.</p>
+                </div>
+
+                <div class="objection-card">
+                    <div class="objection-icon">L</div>
+                    <h3>"What if leads are outside my area?"</h3>
+                    <p>Our system enforces strict radius barriers and real-time postcode verification before any lead reaches your inbox. You exclusively receive leads within your specified service area.</p>
+                </div>
+
+                <div class="objection-card">
+                    <div class="objection-icon">S</div>
+                    <h3>"What if it's a small job?"</h3>
+                    <p>Our hyper-targeted survey filters by project scope. Jobs below your selected lead type are filtered out at the survey stage and never delivered to you.</p>
+                </div>
+
+                <div class="objection-card">
+                    <div class="objection-icon">P</div>
+                    <h3>"Where do these leads come from?"</h3>
+                    <p>Homeowners actively searching for carpentry services encounter your exclusive advertisement, view your business name and credentials, and complete a detailed project form. Each lead is verified and delivered exclusively to you.</p>
                 </div>
             </div>
         </div>
@@ -1720,72 +1838,72 @@
             <div class="faq-list">
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>What makes a lead "quote-ready"?</span>
+                        <span>What if I invest and don't close any jobs?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Every lead goes through a custom qualification funnel specific to their project type. They answer questions about budget, timeline, location, and project details before we verify their contact info. By the time you receive the lead, they're expecting your call and ready for a quote.
+                            We cannot guarantee specific close rates. However, our leads convert significantly higher than shared marketplace alternatives because they are exclusive to you, pre-qualified by project scope and budget, and the homeowner specifically requested your business by name. If you have experience closing marketplace leads, you will perform substantially better with ours.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>How does the verification work?</span>
+                        <span>Why is the price higher than marketplace leads?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            After completing the qualification funnel, we send a PIN code to both their email and mobile number in real-time. They must enter the correct PIN to submit their details. This ensures every contact is valid, reachable, and belongs to a real person — no bots, no fake numbers, no time wasted.
+                            Marketplace leads are distributed to multiple contractors simultaneously, creating price competition. Our leads are exclusive — one lead, one contractor. The higher conversion rate and absence of competition typically delivers superior return on investment.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Are leads really exclusive?</span>
+                        <span>How do you ensure lead quality?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Yes. 100%. Every lead is sold to one contractor only — you. We never share, resell, or recycle leads. When you buy a lead, it's yours exclusively. The homeowner will only receive your quote, giving you the best chance to win the job.
+                            Real-time verification via PIN code to email and mobile. Custom qualification funnel assesses project type, budget range, and timeline. Leads failing verification or outside specified parameters are filtered before delivery.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>What if I can't contact a lead?</span>
+                        <span>What if leads are outside my service area?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            We guarantee 100% contact rates. Pre-qualified, in-area leads. Order 10 leads, get 10 contactable leads. Every number and email is verified by our system before delivery.
+                            Radius barrier and real-time postcode verification enforce your specified service boundaries. You exclusively receive leads within your designated area.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>What if leads aren't delivered?</span>
+                        <span>What if the project scope is too small?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            If we don't deliver your leads within the month, you get a full refund on undelivered leads, no questions asked. This is our commitment to you: we either deliver what we promise, or we refund you completely. You take zero risk.
+                            Lead types are hyper-targeted: fencing, decking, modular construction. Project descriptions below your selected scope are filtered at the survey stage and never delivered.
                         </div>
                     </div>
                 </div>
 
                 <div class="faq-item">
                     <div class="faq-question">
-                        <span>Can I change my lead type or pause?</span>
+                        <span>What is the source of these leads?</span>
                         <span class="faq-icon">+</span>
                     </div>
                     <div class="faq-answer">
                         <div class="faq-answer-content">
-                            Absolutely. You can change your lead type, adjust your volume, or pause your subscription at any time. Just contact us and we'll make the change immediately. There are no lock-in contracts or cancellation fees.
+                            Homeowners actively searching for carpentry services encounter your exclusive advertisement, view your business name and credentials, and complete a detailed project form. Each lead is verified and delivered exclusively to you.
                         </div>
                     </div>
                 </div>
@@ -1796,7 +1914,7 @@
     <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <h2>Start Receiving Leads This Week</h2>
+            <h2>Start Receiving Exclusive Leads This Week</h2>
             <p>Minimum 5 leads • Delivered monthly or refunded • 100% contact guarantee</p>
             <a href="/order" class="btn-primary">Order Now</a>
         </div>
